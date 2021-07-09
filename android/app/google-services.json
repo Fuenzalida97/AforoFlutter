@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "480503121997",
+    "project_id": "aforofirebase",
+    "storage_bucket": "aforofirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480503121997:android:06476a0a62df72b2dbb404",
+        "android_client_info": {
+          "package_name": "com.example.aforo_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480503121997-aqotjddc6q4k360nqbvf4e2e12csuccr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKl74Fx8miy0NHcVplxAb9_2M1N6ePpz0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480503121997-aqotjddc6q4k360nqbvf4e2e12csuccr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
