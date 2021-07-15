@@ -1,5 +1,3 @@
-import 'package:aforo_app/screens/Authentication/authentication.dart';
-import 'package:aforo_app/screens/Authentication/login.dart';
 import 'package:aforo_app/screens/wrapper.dart';
 import 'package:aforo_app/services/authentication_services/auth_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,13 +5,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() async  => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _init = Firebase.initializeApp();
-    return FutureBuilder(
+    return MaterialApp(
+        home: FutureBuilder(
         future: _init,
         builder: (context, snapshot){
           if(snapshot.hasError){
@@ -37,7 +36,9 @@ class MyApp extends StatelessWidget {
           }else{
             return Loading();
           }
-        });
+        }
+        )
+    );
   }
 }
 
@@ -49,7 +50,7 @@ class ErrorWidget extends StatelessWidget {
         child: Column(
         children: [
           Icon(Icons.error),
-          Text("Something went wrong !")
+          Text("Algo salió mal !")
         ]
         )
       ),

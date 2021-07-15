@@ -31,6 +31,7 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
+
     final loginProvider = Provider.of<AuthServices>(context);
     return Scaffold(
         body: SafeArea(
