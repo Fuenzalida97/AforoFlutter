@@ -1,5 +1,6 @@
 import 'package:aforo_app/models/store.dart';
 import 'package:aforo_app/screens/Store/store.dart';
+import 'package:aforo_app/screens/Store/store_count.dart';
 import 'package:aforo_app/services/authentication_services/auth_services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -32,19 +33,21 @@ class HomeScreen extends StatelessWidget {
                     title: Text(snapshot.data[index].nombre
                     ),
                     onTap:(){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => StoreScreen(store: snapshot.data[index])));
+                      //Navigator.of(context).push(MaterialPageRoute(builder: (context) => StoreScreen(store: snapshot.data[index])));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => StoreCountScreen(store: snapshot.data[index])));
                     }
                   );
                 });
           },
         ),
       ),
+      /*
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: (){
           Navigator.of(context).push(MaterialPageRoute(builder: (context)=> StoreScreen()));
         },
-      ),
+      ),*/
     );
   }
 }

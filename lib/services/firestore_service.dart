@@ -4,7 +4,7 @@ import 'package:aforo_app/models/store.dart';
 class FirestoreService {
   FirebaseFirestore _db = FirebaseFirestore.instance;
 
-  // Get Entries
+  // Get Stores
   Stream<List<Store>> getStores(){
     return _db
         .collection('stores')
@@ -13,6 +13,7 @@ class FirestoreService {
         .map((doc)=> Store.fromJson(doc.data()))
         .toList());
   }
+
 
   //Upsert
 Future<void> setStore(Store store){

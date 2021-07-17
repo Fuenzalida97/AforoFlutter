@@ -139,6 +139,7 @@ class AuthServices with ChangeNotifier{
 
   Stream<List<Store>> get stores => firestoreService.getStores();
 
+
   //Setters
   set changeNombre(String nombre){
     _nombre = nombre;
@@ -196,6 +197,11 @@ class AuthServices with ChangeNotifier{
       var updatedStore = Store (storeId: _storeId, nombre: _nombre, actual: _actual.hashCode, capacidad: _capacidad.hashCode, direccion: _direccion, horaInicio: _horaInicio, horaCierre: _horaCierre);
       firestoreService.setStore(updatedStore);
     }
+  }
+
+  updateStore2(int cant){
+    var updateStore = Store(storeId: _storeId, nombre: _nombre, actual: cant, capacidad: _capacidad.hashCode, direccion: _direccion, horaInicio: _horaInicio, horaCierre: _horaCierre);
+    firestoreService.setStore(updateStore);
   }
 
   removeStore(String storeId){
