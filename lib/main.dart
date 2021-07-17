@@ -1,3 +1,4 @@
+import 'package:aforo_app/screens/CounterScreen/counter_page.dart';
 import 'package:aforo_app/screens/wrapper.dart';
 import 'package:aforo_app/services/authentication_services/auth_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
