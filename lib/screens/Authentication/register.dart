@@ -92,8 +92,8 @@ class _RegisterState extends State<Register> {
                           print("Email: ${_emailController.text}");
                           print("Password: ${_passwordController.text}");
                           await loginProvider.register(
-                              _emailController.text.trim(),
-                              _passwordController.text.trim()
+                            _emailController.text.trim(),
+                            _passwordController.text.trim(),
                           );
                         }
                       },
