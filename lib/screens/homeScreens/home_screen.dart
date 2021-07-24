@@ -11,28 +11,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
 
-
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-  class _HomeScreenState extends State<HomeScreen> {
     AuthServices authServices = new AuthServices();
 
-
-
-    @override
-    void dispose() {
-
-      super.dispose();
-    }
-
-    @override
-    void initState(){
-
-    }
     var _tienda;
     var _rol;
 
@@ -94,13 +76,12 @@ class HomeScreen extends StatefulWidget {
           ),
         ),
       ),
-      /*
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: (){
           Navigator.of(context).push(MaterialPageRoute(builder: (context)=> StoreScreen()));
         },
-      ),*/
+      ),
     );
   }
 }

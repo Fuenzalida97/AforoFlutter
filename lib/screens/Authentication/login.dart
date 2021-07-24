@@ -48,14 +48,7 @@ class _LoginState extends State<Login> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    IconButton(
-                      icon: Icon(
-                        Icons.arrow_back_ios,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      onPressed: () {},
-                    ),
-                    SizedBox(height: 60),
+                    SizedBox(height: 100),
                     Text(
                       "Bienvenido de nuevo",
                       style: TextStyle(
@@ -94,16 +87,30 @@ class _LoginState extends State<Login> {
                             borderRadius: BorderRadius.circular(10),
                           )),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 15),
+                    if (loginProvider.errorMessage != null)
+                      Container(
+                          padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                          color: Colors.amberAccent,
+                          child: ListTile(
+                            title: Text(loginProvider.errorMessage),
+                            leading: Icon(Icons.error),
+                            trailing: IconButton(
+                              icon: Icon(Icons.close),
+                              onPressed: () => loginProvider.setMessage(null),
+                            ),
+                          ),
+                      ),
+                    SizedBox(height: 15),
                     MaterialButton(
                       onPressed: () async {
                         if (_formKey.currentState.validate()) {
                           print("Email: ${_emailController.text}");
                           print("Password: ${_passwordController.text}");
-                          var email = loginProvider.login(
+                          await loginProvider.login(
                               _emailController.text.trim(),
                               _passwordController.text.trim());
-                          await email;
                         }
                       },
                       height: 70,
@@ -137,19 +144,7 @@ class _LoginState extends State<Login> {
                       ],
                     ),
                     SizedBox(height: 20),
-                    if (loginProvider.errorMessage != null)
-                      Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                          color: Colors.amberAccent,
-                          child: ListTile(
-                            title: Text(loginProvider.errorMessage),
-                            leading: Icon(Icons.error),
-                            trailing: IconButton(
-                              icon: Icon(Icons.close),
-                              onPressed: () => loginProvider.setMessage(null),
-                            ),
-                          ))
+
                   ],
                 ),
               ),

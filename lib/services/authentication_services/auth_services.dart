@@ -50,13 +50,7 @@ class AuthServices with ChangeNotifier {
           errorMessage = "Se produjo un error indefinido.";
       }
       setLoading(false);
-      print(e);
       setMessage(errorMessage);
-      return e;
-      /*setLoading(false);
-      print(e);
-      setMessage(e.message);
-      print(e.code);*/
     }
     notifyListeners();
   }
@@ -93,7 +87,6 @@ class AuthServices with ChangeNotifier {
           errorMessage = "Se produjo un error indefinido.";
       }
       setLoading(false);
-      print(e);
       setMessage(errorMessage);
     }
     notifyListeners();
@@ -255,11 +248,11 @@ class AuthServices with ChangeNotifier {
   String get rol => _rol;
   String get tienda => _tienda;
 
-  final StreamController<Usuario> _usuarioController = StreamController<Usuario>();
+  //final StreamController<Usuario> _usuarioController = StreamController<Usuario>();
 
-  Stream<List<Usuario>> get usuarios => firestoreService.getUsuarios();
+  //Stream<List<Usuario>> get usuarios => firestoreService.getUsuarios();
 
-  Stream<Usuario> get appUsuario => _usuarioController.stream;
+  //Stream<Usuario> get appUsuario => _usuarioController.stream;
 
 
 
@@ -294,18 +287,18 @@ class AuthServices with ChangeNotifier {
     }
   }
 
-  saveUsuario(String email) {
-    if (id == null) {
+  saveUsuario(String email) async{
+    //if (id == null) {
       //Add
-      var newUsuario = Usuario(
+      var newUsuario = await Usuario(
           id: uuid.v1(), email: email, rol: 'normal', tienda: 'ninguna');
       firestoreService.setUsuario(newUsuario);
-    } else {
+    /*} else {
       //Edit
       var updateUsuario =
           Usuario(id: _id, email: _email, rol: _rol, tienda: _tienda);
       firestoreService.setUsuario(updateUsuario);
-    }
+    }*/
   }
 
   removeUsurio(String id) {

@@ -39,7 +39,6 @@ dependencies:
   charts_flutter: ^0.11.0
   flutter_launcher_icons: ^0.9.0
   firebase_database: ^7.1.2
-  google_sign_in: ^5.0.5
 
 dev_dependencies:
   flutter_test:
