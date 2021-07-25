@@ -76,12 +76,12 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      /*floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: (){
           Navigator.of(context).push(MaterialPageRoute(builder: (context)=> StoreScreen()));
         },
-      ),
+      ),*/
     );
   }
 }
